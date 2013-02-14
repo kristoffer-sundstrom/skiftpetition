@@ -1,0 +1,11 @@
+"sv-SE":
+  activerecord:
+      attributes:
+
+        registration:
+          email: E-postadress
+          name: Namn
+          weight_class_id: Viktklass
+          phone: Telefonnummer
+          age: Ålder
+          club: Klubb

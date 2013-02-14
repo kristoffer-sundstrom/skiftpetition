@@ -1,0 +1,52 @@
+<%= form_for(@registration, :html => {:style => "float:left;"}) do |f| %>
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight_class_id %>
+    <select id="registration_weight_class_id" name="registration[weight_class_id]">
+        <% age = nil %>
+        <% @weight_classes.each do |wc| %>
+            <% if age != wc.age %>
+              <% age = wc.age %>
+            <optgroup label="<%= age %>">
+            <% end %>
+          <option value="<%= wc.id %>"><%= wc.name %></option>
+        <% end %>
+    </select>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :club %>
+    <%= f.text_field :club %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Registrera" %>
+  </div>
+<% end %>

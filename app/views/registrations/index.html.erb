@@ -1,0 +1,32 @@
+<h1>Registrerade spelare</h1>
+
+
+<% old_wcid = nil %>
+<div class="span5">
+<h2>Seniorer</h2>
+<% @seniors.each do |r| %>
+
+    <% if old_wcid != r.weight_class_id %>
+        <% wc = @weight_classes[r.weight_class_id] %>
+        <% old_wcid = wc.id %>
+    <h2><%= "%s" % [wc.name] %></h2>
+    <% end %>
+    <%= "%s, %s" % [r.name, r.club] %><br />
+
+<% end %>
+</div>
+
+
+<div class="span5">
+<h2>Juniorer</h2>
+<% @juniors.each do |r| %>
+
+    <% if old_wcid != r.weight_class_id %>
+        <% wc = @weight_classes[r.weight_class_id] %>
+        <% old_wcid = wc.id %>
+    <h2><%= "%s - %s: %s" % [wc.age, raw(wc.gender), wc.weight] %></h2>
+    <% end %>
+    <%= "%s, %s" % [r.name, r.club] %><br />
+
+<% end %>
+</div>

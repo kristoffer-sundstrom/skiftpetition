@@ -1,0 +1,44 @@
+kvinna, Elit, Senior, Veronica Liljedahl, Linköpings Budoklubb, -70 kg
+kvinna, nyborjare, Senior, Sanna Johansson, Växjö Jujutsuklubb, -70 kg
+kvinna, nyborjare, Senior, Cecilia  King, Dynamix Köping, -70 kg
+
+man, elit, senior, Claes  Gåse , Dynamix Köping, -62 kg
+
+man, elit, senior, Christoffer Druvgården, JJK Samurai, -69 kg
+
+man, elit, senior, Arman Mrktchan, Ju-Jutsu Ryu Jönköping, -77 kg
+
+man, elit, senior, Jonas Andersson, Dynamix Köping, -85 kg
+man, elit, senior, Thomas Gustafsson, Växjö Ju-jutsuklubb/ Team Dynamix, -85 kg
+man, elit, senior, Arman Mrktchan, Ju-Jutsu Ryu Jönköping, -85 kg
+man, elit, senior, Viktor Samuelsson, Linköpings Budoklubb, -85 kg
+
+man, elit, senior, Johan Carlsson, Köping Martial Arts, -94 kg
+man, elit, senior, Lars Karlsson, Linköpings Budoklubb, -94 kg
+
+man, nyborjare, senior, Adam Andersson, Linköpings Budoklubb, -69 kg
+man, nyborjare, senior, Christian Bagler, Linköpings Budoklubb, -69 kg
+man, nyborjare, senior, Kristoffer Håkansson, Västerås Ju-Jutsuklubb, -69 kg
+man, nyborjare, senior, Emil Johansson, Växjö Jujutsuklubb, -69 kg
+man, nyborjare, senior, Kim Päivärinne, Dynamix Köping, -69 kg
+man, nyborjare, senior, Alexander Sjölund, Örnsköldsviks Ju-Jutsu Club, -69 kg
+man, nyborjare, senior, Anton Toll, Växjö ju-jutsu, -69 kg
+man, nyborjare, senior, Joakim Westman, Dynamix Köping, -69 kg
+
+man, nyborjare, senior, Robin  Frahm, Linköpings Budoklubb/Grizzly MMA, -77 kg
+man, nyborjare, senior, Simon Lind, Linköpings Budoklubb, -77 kg
+man, nyborjare, senior, Jimmy Oskarsson, Kumla Kampsport, -77 kg
+man, nyborjare, senior, Erik Svenning, Göteborgs Ju-jutsuklubb, -77 kg
+man, nyborjare, senior, Joakim Östan Riise, Dynamix Herrljunga, -77 kg
+
+man, nyborjare, senior, Noor Al-Dalaimi, Örnsköldsviks Ju-Jutsu Club, -85 kg
+man, nyborjare, senior, Magnus Lindegård, Dokan Dojo, -85 kg
+man, nyborjare, senior, Martin Gradéus, Dynamix Herrljunga, -85 kg
+man, nyborjare, senior, Johan Segertoft, Linköping Budoklubb, -85 kg
+man, nyborjare, senior, Tobias Westermark, Shindo, -85 kg
+
+man, nyborjare, senior, Vedad Babic, Dokan Dojo, -94 kg
+man, nyborjare, senior, Simon Jonsson, Örnsköldsviks Ju-Jutsu Club, -94 kg
+
+man, nyborjare, senior, Kenan Babic, Dokan Dojo, +94 kg
+man, nyborjare, senior, Mike Malmer, Kumla Kampsport, +94 kg
