@@ -59,10 +59,11 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(params[:registration])
+    @weight_classes = WeightClass.order("age, gender, weight").all
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
+        format.html { redirect_to registrations_path, notice: 'Registration was successfully created.' }
         format.json { render json: @registration, status: :created, location: @registration }
       else
         format.html { render action: "new" }

@@ -9,3 +9,19 @@
           phone: Telefonnummer
           age: Ålder
           club: Klubb
+
+
+      errors:
+        models:
+          registration:
+            attributes:
+              email:
+                blank: "saknas"
+              name:
+                blank: "saknas"
+              phone:
+                blank: "saknas"
+              club:
+                blank: "saknas"
+              age:
+                blank: "saknas"

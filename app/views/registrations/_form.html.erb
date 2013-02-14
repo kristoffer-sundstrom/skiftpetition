@@ -1,7 +1,7 @@
-<%= form_for(@registration, :html => {:style => "float:left;"}) do |f| %>
+<%= form_for(@registration) do |f| %>
   <% if @registration.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+      <h2><%= @registration.errors.count %> fel i formuläret:</h2>
 
       <ul>
       <% @registration.errors.full_messages.each do |msg| %>
