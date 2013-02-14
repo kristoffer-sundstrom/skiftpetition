@@ -25,3 +25,11 @@
                 blank: "saknas"
               age:
                 blank: "saknas"
+
+
+  elit: Elit
+  nyborjare: Nybörjare
+  man: Män
+  kvinna: Kvinnor
+  flickor: Flickor
+  pojkar: Pojkar

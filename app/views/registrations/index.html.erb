@@ -7,6 +7,9 @@
 <% @seniors.each do |r| %>
 
     <% if old_wcid != r.weight_class_id %>
+        <% unless old_wcid.nil? %>
+          <br />
+        <% end %>
         <% wc = @weight_classes[r.weight_class_id] %>
         <% old_wcid = wc.id %>
     <h2><%= "%s" % [wc.name] %></h2>
