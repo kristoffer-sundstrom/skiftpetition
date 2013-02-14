@@ -17,13 +17,13 @@ class RegistrationsController < ApplicationController
     @seniors = registrations.select {|r| @weight_classes[r.weight_class_id].age == "senior"}
     @juniors = registrations.select {|r| @weight_classes[r.weight_class_id].age != "senior"}
 
-
-    puts @weight_classes
-
+    registrations.each do |r|
+      #r.weight_class = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @registrations }
+      format.json { render json: registrations }
     end
   end
 
