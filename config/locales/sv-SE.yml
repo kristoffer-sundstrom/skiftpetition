@@ -33,3 +33,10 @@
   kvinna: Kvinnor
   flickor: Flickor
   pojkar: Pojkar
+
+  U8: 8 år eller yngre
+  U10: 10 år eller yngre
+  U12: 12 år eller yngre
+  U15: 15 år eller yngre
+  U18: 18 år eller yngre
+  senior: minst 15 år
