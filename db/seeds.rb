@@ -1,6 +1,7 @@
 
 weights = true
-registrations = false
+clear_registrations = true
+fake_registrations = false
 
 if weights
   WeightClass.delete_all
@@ -126,8 +127,11 @@ if weights
 
 end
 
-if registrations
+if clear_registrations
   Registration.delete_all
+end
+
+if fake_registrations
   seniors = open "db/seniors.txt"
 
   seniors.each do |line|
