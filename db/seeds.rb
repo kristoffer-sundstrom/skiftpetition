@@ -1,6 +1,6 @@
 
 weights = true
-registrations = true
+registrations = false
 
 if weights
   WeightClass.delete_all
