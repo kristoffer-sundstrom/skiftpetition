@@ -130,14 +130,22 @@ end
 
 if duo_weights
 
-  ["juniorduo", "seniorduo"].each do |age|
+  age = "juniorduo"
+  ["duo mix", "duo damer", "duo herrar"].each do |weight|
+    WeightClass.create!({
+      :age => age,
+      :weight => weight
+    })
+  end
 
-    ["duo mix", "duo damer", "duo herrar"].each do |weight|
-      WeightClass.create!({
-        :age => age,
-        :weight => weight
-      })
-    end
+
+  age = "seniorduo"
+  ["duo mix", "duo damer", "duo herrar"].each do |weight|
+    WeightClass.create!({
+      :beginner_elite => "elit",
+      :age => age,
+      :weight => weight
+    })
   end
 
 
