@@ -41,7 +41,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations/new.json
   def new
     @registration = Registration.new
-    @weight_classes = WeightClass.order("age, gender, weight").all
+    @weight_classes = WeightClass.order("age, gender, beginner_elite, weight").all
 
     respond_to do |format|
       format.html # new.html.erb

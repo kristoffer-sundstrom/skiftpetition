@@ -27,7 +27,7 @@
                 blank: "saknas"
 
 
-  elit: Elit
+  elit: SM
   nyborjare: Nybörjare
   man: Män
   kvinna: Kvinnor
@@ -38,7 +38,7 @@
   U10: 10 år eller yngre
   U12: 12 år eller yngre
   U15: 15 år eller yngre
-  U18: 18 år eller yngre
+  U18: Junior-SM, 18 år eller yngre
   senior: minst 15 år
   duo damer: Duo damer
   duo herrar: Duo herrar
