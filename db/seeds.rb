@@ -1,8 +1,13 @@
+require 'open-uri'
+require 'json'
+
+
 
 weights = false
-duo_weights = true
+duo_weights = false
 clear_registrations = false
 fake_registrations = false
+json_registrations = false
 
 if weights
   WeightClass.delete_all
@@ -187,9 +192,31 @@ if fake_registrations
 
   end
 
-
 end
 
+
+if json_registrations
+
+  url = "http://skiftpetition.herokuapp.com/registrations.json"
+  str = open(url).read
+  json_object = JSON.parse(str)
+
+  json_object.each do |r|
+    rwc = r["weight_class"]
+    wc = WeightClass.first(:conditions => {:gender => rwc["gender"], :age => rwc["age"],
+                            :beginner_elite => rwc["beginner_elite"], :weight => rwc["weight"]})
+
+    Registration.create!({
+        :weight_class_id => wc.id,
+        :name => r["name"],
+        :email => r["email"],
+        :phone => r["phone"],
+        :age => r["age"],
+        :club => r["club"],
+    })
+  end
+
+end
 
 
 
