@@ -64,7 +64,7 @@ $(function(){
         <% @weight_classes.each do |wc| %>
             <% if age != wc.age %>
               <% age = wc.age %>
-            <optgroup label="<%= age %> (<%= t(age) %>)">
+            <optgroup label="<%= age.capitalize %> (<%= t(age) %>)">
             <% end %>
           <option value="<%= wc.id %>"><%= wc.name %></option>
         <% end %>

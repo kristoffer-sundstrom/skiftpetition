@@ -11,8 +11,8 @@ class RegistrationsController < ApplicationController
       @weight_classes[wc.id] = wc
     end
 
-    @seniors = registrations.select {|r| @weight_classes[r.weight_class_id].age == "senior"}
-    @juniors = registrations.select {|r| @weight_classes[r.weight_class_id].age != "senior"}
+    @seniors = registrations.select {|r| @weight_classes[r.weight_class_id].age.include?("senior") }
+    @juniors = registrations.select {|r| !@weight_classes[r.weight_class_id].age.include?("senior")}
 
     respond_to do |format|
       format.html # index.html.erb

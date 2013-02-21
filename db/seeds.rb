@@ -1,6 +1,7 @@
 
-weights = true
-clear_registrations = true
+weights = false
+duo_weights = true
+clear_registrations = false
 fake_registrations = false
 
 if weights
@@ -126,6 +127,23 @@ if weights
   end
 
 end
+
+if duo_weights
+
+  ["juniorduo", "seniorduo"].each do |age|
+
+    ["duo mix", "duo damer", "duo herrar"].each do |weight|
+      WeightClass.create!({
+        :age => age,
+        :weight => weight
+      })
+    end
+  end
+
+
+
+end
+
 
 if clear_registrations
   Registration.delete_all
