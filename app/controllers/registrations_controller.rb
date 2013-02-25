@@ -23,6 +23,13 @@ class RegistrationsController < ApplicationController
             h
         }
       }
+      format.txt {
+        render :text => registrations.map { |r|
+                  wc = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
+                  [r[:name], r[:club], wc[:weight], r[:name], r[:name], rand(1000), rand(1000), "M", ""].join(";")
+        }.join("\n")
+
+      }
     end
   end
 
