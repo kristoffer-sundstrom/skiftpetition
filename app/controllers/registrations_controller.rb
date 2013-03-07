@@ -30,6 +30,19 @@ class RegistrationsController < ApplicationController
         }.join("\n")
 
       }
+
+      format.csv {
+
+        # format:
+        # member nr, club idnr, clubname, club short, first name, suffix, last name, genus(M/F), date of birth (dd-mm),
+        # year of birth (yyyy), function (competitor), event nr, weight cat, address, zip code, city, phone, kyu
+
+        send_data registrations.map { |r|
+                          wc = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
+                          [r[:name], r[:club], wc[:weight], r[:name], r[:name], rand(1000), rand(1000), "M", ""]
+                }.to_csv
+      }
+
     end
   end
 
