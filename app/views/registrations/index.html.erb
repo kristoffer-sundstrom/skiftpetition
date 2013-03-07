@@ -22,7 +22,12 @@
         <% old_wcid = wc.id %>
     <h2><%= "%s" % [wc.name] %></h2>
     <% end %>
-    <%= "%s, %s" % [r.name, r.club] %><br />
+      <% if r.active %>
+    <%= "%s, %s" % [r.name, r.club] %>
+      <% else %>
+    <%= raw "<strike>%s, %s</strike>" % [r.name, r.club] %>
+      <% end %>
+      <br />
 
 <% end %>
 </div>
