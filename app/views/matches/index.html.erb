@@ -1,0 +1,23 @@
+<h1>Matchordning</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Viktklass</th>
+    <th>Röd</th>
+    <th>Blå</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @class_schedule.each_pair do |weight_class_id, fights| %>
+    <% fights.each do |fight| %>
+      <tr>
+        <td><%= @weight_classes[weight_class_id].name %></td>
+        <td><%= fight.team_a %></td>
+        <td><%= fight.team_b %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+
+</table>
