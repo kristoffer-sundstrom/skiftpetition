@@ -6,6 +6,8 @@ class RegistrationsController < ApplicationController
 
     weight_classes = WeightClass.all(:conditions => { :id => registrations.map(&:weight_class_id) })
 
+    @is_admin = params.fetch("admin", "false") == "kakor"
+
     @weight_classes = {}
     weight_classes.each do |wc|
       @weight_classes[wc.id] = wc
@@ -72,6 +74,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations/1/edit
   def edit
     @registration = Registration.find(params[:id])
+    @weight_classes = WeightClass.order("age, gender, beginner_elite, weight").all
   end
 
   # POST /registrations
@@ -96,16 +99,13 @@ class RegistrationsController < ApplicationController
   def update
     @registration = Registration.find(params[:id])
 
-    if @registration.email == params[:email]
-
-      respond_to do |format|
-        if @registration.update_attributes(params[:registration])
-          format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
-          format.json { head :no_content }
-        else
-          format.html { render action: "edit" }
-          format.json { render json: @registration.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @registration.update_attributes(params[:registration])
+        format.html { redirect_to registrations_path, notice: 'Registration was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @registration.errors, status: :unprocessable_entity }
       end
     end
   end

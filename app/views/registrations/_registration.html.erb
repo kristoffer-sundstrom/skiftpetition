@@ -1,0 +1,11 @@
+<% if registration.active %>
+    <%= "%s, %s" % [registration.name, registration.club] %>
+<% else %>
+    <%= raw "<strike>%s, %s</strike>" % [registration.name, registration.club] %>
+<% end %>
+
+<% if @is_admin %>
+  <%= link_to "Ändra", registration_path(registration) %>
+<% end %>
+
+<br />

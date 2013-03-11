@@ -66,7 +66,7 @@ $(function(){
               <% age = wc.age %>
             <optgroup label="<%= age.capitalize %> (<%= t(age) %>)">
             <% end %>
-          <option value="<%= wc.id %>"><%= wc.name %></option>
+          <option value="<%= wc.id %>" <%= "selected" if @registration.weight_class_id == wc.id %>><%= wc.name %></option>
         <% end %>
     </select>
   </div>
