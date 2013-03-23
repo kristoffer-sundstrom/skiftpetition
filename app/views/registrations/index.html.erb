@@ -11,7 +11,7 @@
 <% if @seniors.length > 0 %>
 <% old_wcid = nil %>
 <div class="span5">
-<h2>Seniorer</h2>
+<h2>Seniorer (<%= @seniors.length %> st)</h2>
 <% @seniors.each do |r| %>
 
     <% if old_wcid != r.weight_class_id %>
@@ -30,7 +30,7 @@
 <% end %>
 <% if @juniors.length > 0 %>
     <div class="span5">
-        <h2>Juniorer</h2>
+        <h2>Juniorer (<%= @juniors.length %> st)</h2>
         <% @juniors.each do |r| %>
 
             <% if old_wcid != r.weight_class_id %>
