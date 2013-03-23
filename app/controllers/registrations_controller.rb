@@ -62,6 +62,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations/new
   # GET /registrations/new.json
   def new
+    @action = "new"
     @registration = Registration.new
     @weight_classes = WeightClass.order("age, gender, beginner_elite, weight").all
 
@@ -73,6 +74,7 @@ class RegistrationsController < ApplicationController
 
   # GET /registrations/1/edit
   def edit
+    @action = "edit"
     @registration = Registration.find(params[:id])
     @weight_classes = WeightClass.order("age, gender, beginner_elite, weight").all
   end

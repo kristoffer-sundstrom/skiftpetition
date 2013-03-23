@@ -87,6 +87,14 @@ $(function(){
     <%= f.label :club %>
     <%= f.text_field :club %>
   </div>
+  <% if @action == "edit" %>
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+  <br />
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Anmäl" %>
   </div>
