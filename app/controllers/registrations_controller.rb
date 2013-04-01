@@ -33,17 +33,26 @@ class RegistrationsController < ApplicationController
 
       }
 
-      format.csv {
+      format.ssv {
 
-        # format:
+        # format for IJJF Scoreboard:
         # member nr, club idnr, clubname, club short, first name, suffix, last name, genus(M/F), date of birth (dd-mm),
         # year of birth (yyyy), function (competitor), event nr, weight cat, address, zip code, city, phone, kyu
 
-        send_data registrations.map { |r|
+        send_data registrations.delete_if{|r| !r.active }.map { |r|
                           wc = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
-                          [r[:name], r[:club], wc[:weight], r[:name], r[:name], rand(1000), rand(1000), "M", ""]
-                }.to_csv
+                          [r[:name], r[:club], wc[:weight], r[:name], r[:name], rand(1000), rand(1000), "M", ""].join(";")
+                }.join("\n")
       }
+
+      format.csv {
+        send_data registrations.delete_if {|r| !r.active }.map { |r|
+                                  wc = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
+                                  [r[:name], r[:club], r[:age], r[:email], r[:phone], wc.name.gsub(",", "")].join(",")
+                }.join("\n")
+
+      }
+
 
     end
   end
