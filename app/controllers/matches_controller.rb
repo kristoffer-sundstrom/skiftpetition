@@ -13,16 +13,21 @@ class MatchesController < ApplicationController
 
 
     @registrations = {}
-    Registration.order("weight_class_id").all.each do |r|
+    Registration.order("weight_class_id").all(:conditions => {:active => true}).each do |r|
       unless @registrations.has_key? r.weight_class_id
         @registrations[r.weight_class_id] = []
       end
       @registrations[r.weight_class_id].push(r.name)
     end
 
+    @separately = {}
     @class_schedule = {}
     @registrations.each_pair do |weight_class, fighters|
       next unless fighters.length > 1
+      if fighters.length > 6
+        @separately[weight_class] = fighters
+        next
+      end
 
       if fighters.length == 2
         @class_schedule[weight_class] = [
