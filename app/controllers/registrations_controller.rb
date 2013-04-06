@@ -48,7 +48,7 @@ class RegistrationsController < ApplicationController
       format.csv {
         send_data registrations.delete_if {|r| !r.active }.map { |r|
                                   wc = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
-                                  [r[:name], r[:club], r[:age], r[:email], r[:phone], wc.name.gsub(",", "")].join(",")
+                                  [r[:name], r[:club], r[:age], r[:email], r[:phone], wc.name(true).gsub(",", "")].join(",")
                 }.join("\n"), :type => "text/csv"
 
       }
