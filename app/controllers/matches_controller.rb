@@ -24,7 +24,7 @@ class MatchesController < ApplicationController
     @class_schedule = {}
     @registrations.each_pair do |weight_class, fighters|
       next unless fighters.length > 1
-      if fighters.length > 6
+      if fighters.length > 5
         @separately[weight_class] = fighters
         next
       end
