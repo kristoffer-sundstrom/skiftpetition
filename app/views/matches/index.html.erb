@@ -36,13 +36,13 @@
   <% @separately.each_pair do |wc, fighters| %>
       <thead>
         <tr>
-            <th><%= @weight_classes[wc].name(true) %></th>
+            <th colspan="5"><%= @weight_classes[wc].name(true) %> (<%= fighters.length %> spelare -> <%= @ladder_matches.fetch(fighters.length, "?") %>)</th>
         </tr>
       </thead>
       <tbody>
       <% fighters.each do |fighter| %>
         <tr>
-          <td><%= fighter %></td>
+          <td colspan="5"><%= fighter %></td>
         </tr>
       <% end %>
       </tbody>

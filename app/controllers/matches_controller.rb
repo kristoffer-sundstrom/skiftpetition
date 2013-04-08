@@ -54,6 +54,14 @@ class MatchesController < ApplicationController
       @class_schedule[weight_class] = @class_schedule[weight_class].flatten.delete_if {|w| w.to_s.include?("dummy") }
     end
 
+    @ladder_matches = {
+        6 => 9,
+        7 => 10,
+        8 => 12,
+        9 => 14,
+        10 => 16
+    }
+
   end
 
 
