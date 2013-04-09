@@ -14,16 +14,8 @@
   <% @class_schedule.each_pair do |weight_class_id, fights| %>
     <% fights.each do |fight| %>
       <tr>
-        <td><%= ["senior", "U18"].include?(@weight_classes[weight_class_id].age) ? "EM" : "FM" %></td>
-        <td>
-          <% if
-              (@weight_classes[weight_class_id].beginner_elite == "elit" ||
-              @weight_classes[weight_class_id].age == "U18")
-          %>A
-          <% elsif @weight_classes[weight_class_id].age == "senior" &&
-                  @weight_classes[weight_class_id].beginner_elite == "nyborjare" %>
-          B
-          <% end %>
+        <td><%= am_pm(@weight_classes[weight_class_id]) %></td>
+        <td><%= mat(@weight_classes[weight_class_id]) %>
 
         </td>
         <td><%= @weight_classes[weight_class_id].name(true) %></td>
@@ -32,11 +24,25 @@
       </tr>
     <% end %>
   <% end %>
+  <% @separately.each_pair do |weight_class_id, fighters| %>
+    <% (1..@ladder_matches.fetch(fighters.length)).each do |i| %>
+        <% weight_class = @weight_classes[weight_class_id] %>
+      <tr>
+        <td><%= am_pm(weight_class) %></td>
+        <td><%= mat(weight_class) %>
+        <td><%= weight_class.name(true) %></td>
+        <td>Match <%= i %></td>
+        <td></td>
+    </tr>
+    <% end %>
+
+  <% end %>
+
   </tbody>
   <% @separately.each_pair do |wc, fighters| %>
       <thead>
         <tr>
-            <th colspan="5"><%= @weight_classes[wc].name(true) %> (<%= fighters.length %> spelare -> <%= @ladder_matches.fetch(fighters.length, "?") %>)</th>
+            <th colspan="5"><%= @weight_classes[wc].name(true) %> (<%= fighters.length %> spelare -> <%= @ladder_matches.fetch(fighters.length, "?") %> matcher)</th>
         </tr>
       </thead>
       <tbody>

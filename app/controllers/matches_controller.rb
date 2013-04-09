@@ -59,7 +59,11 @@ class MatchesController < ApplicationController
         7 => 10,
         8 => 12,
         9 => 14,
-        10 => 16
+        10 => 16,
+        11 => 18,
+        12 => 20,
+        13 => 22,
+        14 => 24
     }
 
   end
