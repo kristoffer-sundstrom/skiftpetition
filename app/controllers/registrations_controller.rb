@@ -46,11 +46,30 @@ class RegistrationsController < ApplicationController
       }
 
       format.csv {
-        send_data registrations.delete_if {|r| !r.active }.map { |r|
+        output = ""
+        if params.has_key? "short"
+
+            def price(wc, r)
+              class_price = wc.age.include?("senior") ? 300 : 200
+              class_price + penalty(r)
+            end
+
+            def penalty(r)
+              r[:created_at] < Time.new(2013, 04, 02, 9) ? 0 : 100
+            end
+
+            output = registrations.delete_if {|r| !r.active }.map { |r|
+                                              wc = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
+                                              [r[:name], r[:club], wc.name(true).gsub(",", ""), r[:created_at], price(wc, r)].join(",")
+                            }.sort{|x,y| x[0]<=> y[0]}.join("\n")
+
+        else
+          output = registrations.delete_if {|r| !r.active }.map { |r|
                                   wc = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
                                   [r[:name], r[:club], r[:age], r[:email], r[:phone], wc.name(true).gsub(",", "")].join(",")
-                }.join("\n"), :type => "text/csv"
-
+                }.join("\n")
+        end
+        send_data output, :type => "text/csv"
       }
 
 
