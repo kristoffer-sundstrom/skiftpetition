@@ -61,7 +61,7 @@ class RegistrationsController < ApplicationController
             output = registrations.delete_if {|r| !r.active }.map { |r|
                                               wc = @weight_classes.fetch(r.weight_class_id, r.weight_class_id)
                                               [r[:name], r[:club], wc.name(true).gsub(",", ""), r[:created_at], price(wc, r)].join(",")
-                            }.sort{|x,y| x[0]<=> y[0]}.join("\n")
+                            }.sort{|x,y| x[0].downcase <=> y[0].downcase}.join("\n")
 
         else
           output = registrations.delete_if {|r| !r.active }.map { |r|
