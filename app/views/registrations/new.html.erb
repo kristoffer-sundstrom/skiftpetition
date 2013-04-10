@@ -1,6 +1,6 @@
 
+<% if params.fetch("admin", "") == "kakor"  %>
 <h1>Anmälan!</h1>
-
 <p>Vid anmälan i fler än en viktklass görs flera separata anmälningar av samma spelare.</p>
 
 <p>
@@ -17,5 +17,11 @@
   Vid ett tillräckligt stort antal tävlande kommer U8-viktklasser användas.
 </p>
 
+
 <%= render 'form' %>
+<% else %>
+    <h1>Registreringen stängd</h1><br/>
+
+    <p>För frågor, kontakta skiftopen@gmail.com</p>
+<% end %>
 
