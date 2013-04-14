@@ -5,6 +5,8 @@ Skiftpetition::Application.routes.draw do
 
   get "information/index"
 
+  get "results/index"
+
   resources :registrations
 
 end
